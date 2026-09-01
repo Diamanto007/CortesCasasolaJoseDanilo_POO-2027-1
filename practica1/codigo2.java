@@ -4,27 +4,48 @@ public class codigo2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("=== CALCULADORA BÁSICA ===");
         System.out.print("Ingresa el primer número: ");
-        int num1 = scanner.nextInt();
+        double num1 = scanner.nextDouble();
 
         System.out.print("Ingresa el segundo número: ");
-        int num2 = scanner.nextInt();
+        double num2 = scanner.nextDouble();
 
-        System.out.print("Ingresa el tercer número: ");
-        int num3 = scanner.nextInt();
+        System.out.println("\nSelecciona la operación:");
+        System.out.println("1. Sumar (+)");
+        System.out.println("2. Restar (-)");
+        System.out.println("3. Multiplicar (*)");
+        System.out.println("4. Dividir (/)");
+        System.out.print("Opción (1-4): ");
+        int opcion = scanner.nextInt();
 
-        int mayor = num1;
+        double resultado = 0;
 
-        if (num2 > mayor) {
-            mayor = num2;
+        switch (opcion) {
+            case 1:
+                resultado = num1 + num2;
+                System.out.println("Resultado: " + resultado);
+                break;
+            case 2:
+                resultado = num1 - num2;
+                System.out.println("Resultado: " + resultado);
+                break;
+            case 3:
+                resultado = num1 * num2;
+                System.out.println("Resultado: " + resultado);
+                break;
+            case 4:
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                    System.out.println("Resultado: " + resultado);
+                } else {
+                    System.out.println("Error: No se puede dividir entre cero.");
+                }
+                break;
+            default:
+                System.out.println("Opción no válida.");
         }
 
-        if (num3 > mayor) {
-            mayor = num3;
-        }
-
-        System.out.println("El número más grande es: " + mayor);
-        
         scanner.close();
     }
 }
