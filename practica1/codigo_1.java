@@ -1,18 +1,30 @@
 import java.util.Scanner;
 
-public class HolaMundo {
+public class MayorYParidad {
     public static void main(String[] args) {
-        // Crear un objeto Scanner para leer lo que escribe el usuario
         Scanner scanner = new Scanner(System.in);
 
-        // Pedir el nombre
-        System.out.print("¿Cómo te llamas? ");
-        String nombre = scanner.nextLine();
+        System.out.print("Ingresa el primer número entero: ");
+        int a = scanner.nextInt();
 
-        // Saludar al usuario
-        System.out.println("¡Hola, " + nombre + "! Bienvenido a Java.");
+        System.out.print("Ingresa el segundo número entero: ");
+        int b = scanner.nextInt();
 
-        // Cerrar el scanner
+        if (a > b) {
+            System.out.println("El número mayor es: " + a);
+        } else if (b > a) {
+            System.out.println("El número mayor es: " + b);
+        } else {
+            System.out.println("Ambos números son iguales.");
+        }
+
+        int suma = a + b;
+        if (suma % 2 == 0) {
+            System.out.println("La suma de ambos (" + suma + ") es PAR.");
+        } else {
+            System.out.println("La suma de ambos (" + suma + ") es IMPAR.");
+        }
+
         scanner.close();
     }
 }
